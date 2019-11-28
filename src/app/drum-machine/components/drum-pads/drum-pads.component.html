@@ -1,0 +1,5 @@
+<table id="drum-pads">
+    <tr *ngFor="let row of dataSet">
+        <app-drum-machine-pad *ngFor="let item of row" [item] = 'item' ></app-drum-machine-pad>
+    </tr>
+</table>

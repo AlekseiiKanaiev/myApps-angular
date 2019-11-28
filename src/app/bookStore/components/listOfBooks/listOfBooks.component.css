@@ -1,0 +1,23 @@
+table{
+    width: 100%;
+}
+img{
+    display: block;
+    margin: auto;
+}
+tr:not(.table-header):hover{
+    background-color: #ccc;
+}
+td{
+    min-width: 60px;
+}
+th, td {
+    border-bottom: 1px solid #ccc;
+}
+td:last-child{
+    text-align: right;
+}
+.more-button{
+    margin: 20px auto 20px auto;
+    display: block;
+}

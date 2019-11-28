@@ -1,0 +1,9 @@
+<div id="quote-message">
+    <div id="text">
+        <!-- <i class="fa fa-quote-left" [icon] = ></i> -->
+        <span *ngIf="randomQuote">{{ randomQuote.quote }}</span>
+        <span>Quote message</span>
+    </div>
+    <div id="author" *ngIf="randomQuote">{{ randomQuote.author }}</div>
+    <div id="author">Author</div>
+</div>

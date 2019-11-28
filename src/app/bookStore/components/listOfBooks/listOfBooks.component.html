@@ -1,0 +1,43 @@
+<div id="booklist" *ngIf="bookList">
+    <table>
+        <tr class="table-header">
+            <th>Name</th>
+            <th>Author</th>
+            <th>Price</th>
+        </tr>
+        <ng-template ngFor let-item [ngForOf]="bookList"; let-i = 'index'>
+            <tr *ngIf="i < endIndex">
+                <td>{{item.title}}</td>
+                <td>{{item.authors}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <button class="btn btn-info" (click) = 'openModal(template)'>
+                        Detail
+                    </button>
+                    <ng-template #template>
+                        <div class="modal-header">
+                            <h6 class="modal-title">{{item.title}}</h6>
+                            <button type="button" class="close" aria-label="Close" (click) = 'modalRef.hide()'>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div *ngIf="item.image !== 'There is no image'; else noImage">
+                                <img src = "{{ item.image }}" alt = "{{ item.title }}">
+                            </div>
+                            <ng-template #noImage>
+                                <p>
+                                    {{ item.image }}
+                                </p>
+                            </ng-template>
+                            <p>
+                                {{ item.description }}
+                            </p>
+                        </div>
+                    </ng-template>
+                </td>
+            </tr>
+        </ng-template>
+    </table>
+    <button *ngIf="isMore" class="more-button btn btn-info" (click) = 'viewMore()'>View more</button>
+</div>
