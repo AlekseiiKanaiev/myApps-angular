@@ -10,38 +10,19 @@ import { ColorizeSerivice } from '../../_services/colorize.service';
 })
 export class QouteBoxComponent implements OnInit {
   private randomQuote: Quote;
-  private quotes: Quote[];
-  // private twit: Quote;
-  // private thumb: Quote;
+  // private quotes: Quote[];
 
-  constructor(private getQuoteServ: GetQuoteService, private colorServ: ColorizeSerivice) { }
+  constructor(private getQuoteServ: GetQuoteService) {}
 
   ngOnInit() {
-    this.getQuoteServ.getQuotes().subscribe(
+    this.getQuoteServ.obsQuotes.subscribe(
       data => {
         // console.log(data);
-        this.quotes = data;
-        this.getRandomQuote();
+        this.randomQuote = data;
       },
       error => {
         console.log('Error: ' + error);
-        this.getQuoteServ.getQuotesPromise()
-          .then(
-            result => {
-                // console.log(result);
-                this.quotes = result.quotes;
-                this.getRandomQuote();
-            }
-          )
-          .catch(
-              err => console.log(err)
-          );
       }
     );
-  }
-
-  private getRandomQuote() {
-    this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
-    this.colorServ.setRandomColor();
   }
 }

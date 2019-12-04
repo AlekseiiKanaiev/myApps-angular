@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter, Input, ViewChild, ElementRef, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterContentChecked } from '@angular/core';
 import { faTwitterSquare, faTumblrSquare } from '@fortawesome/free-brands-svg-icons';
 import { Quote } from 'src/app/random-quote/_models/qoute';
 import { ColorizeSerivice } from 'src/app/random-quote/_services/colorize.service';
+import { GetQuoteService } from 'src/app/random-quote/_services/getQuote.service';
 
 @Component({
   selector: 'app-random-quote-buttons',
@@ -14,19 +15,19 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
   private twitterHtef = 'https://twitter.com';
   private thumblerHref = 'https://www.tumblr.com';
   private color = 'black';
-
-  @Input() randomQuote: Quote;
-
-  @Output() getRandomQuote = new EventEmitter<void>();
+  private randomQuote: Quote;
 
   @ViewChild('twit', {static: false}) twit: ElementRef;
   @ViewChild('thumb', {static: false}) thumb: ElementRef;
 
-  constructor(private colorServ: ColorizeSerivice) { }
+  constructor(private colorServ: ColorizeSerivice, private quoteServ: GetQuoteService) { }
 
   ngOnInit() {
     this.colorServ.obsColor.subscribe(
       color => this.color = color
+    );
+    this.quoteServ.obsQuotes.subscribe(
+      data => this.randomQuote = data
     );
   }
 
@@ -34,7 +35,7 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
     if (this.randomQuote) { this.setHrefs(); }
   }
 
-  setHrefs() {
+  private setHrefs() {
     this.twitterHtef = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
       encodeURIComponent(`"${this.randomQuote.quote}" ${this.randomQuote.author}`);
     this.thumblerHref = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
@@ -44,8 +45,8 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
     this.thumb.nativeElement.setAttribute('href', this.thumblerHref);
   }
 
-  getNewQuote() {
-    this.getRandomQuote.emit();
+  private getNewQuote() {
+    this.quoteServ.getNewRandomQuote();
   }
 
 }
