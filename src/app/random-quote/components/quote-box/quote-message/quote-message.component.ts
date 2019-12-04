@@ -13,14 +13,14 @@ import { trigger, style, state, transition, animate, keyframes } from '@angular/
     trigger('fadeOut', [
       state('show', style({height: '*'})),
       state('hide', style({opacity: 0, visibility: 'hidden'})),
-      transition('hide<=>show', [animate('1.5s ease-in')]),
+      transition('hide<=>show', [animate('1s ease-in')]),
     ])
   ]
 })
 export class QuoteMessageComponent implements OnInit {
   private randomQuote: Quote;
   private quoteIcon = faQuoteLeft;
-  private color = 'black';
+  private color = 'white';
   private showMessageState = 'hide';
 
   constructor(private colorServ: ColorizeSerivice, private quotServ: GetQuoteService) { }
@@ -28,7 +28,7 @@ export class QuoteMessageComponent implements OnInit {
   ngOnInit() {
     this.colorServ.obsColor.subscribe(
       color => {
-        this.color = color;
+        setTimeout(() => this.color = color, 0);
       }
     );
     this.quotServ.obsQuotes.subscribe(
@@ -38,7 +38,7 @@ export class QuoteMessageComponent implements OnInit {
           setTimeout(() => {
             this.showMessageState = 'show';
             this.randomQuote = data;
-          }, 1500);
+          }, 1);
         } else {
           this.showMessageState = 'show';
           this.randomQuote = data;

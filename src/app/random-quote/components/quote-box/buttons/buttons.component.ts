@@ -14,7 +14,7 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
   private thumblerIcon = faTumblrSquare;
   private twitterHtef = 'https://twitter.com';
   private thumblerHref = 'https://www.tumblr.com';
-  private color = 'black';
+  private color = 'white';
   private randomQuote: Quote;
 
   @ViewChild('twit', {static: false}) twit: ElementRef;
@@ -24,7 +24,7 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
 
   ngOnInit() {
     this.colorServ.obsColor.subscribe(
-      color => this.color = color
+      color => setTimeout(() => this.color = color, 0)
     );
     this.quoteServ.obsQuotes.subscribe(
       data => this.randomQuote = data

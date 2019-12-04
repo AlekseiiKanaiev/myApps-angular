@@ -18,7 +18,7 @@ export class RandomQuoteComponent implements OnInit, AfterViewInit {
         this.colorServ.obsColor.subscribe(
             color => {
                 console.log(color);
-                this.color = color;
+                setTimeout(() => this.color = color, 0);
             }
         );
         this.quoteServ.setQuotes();
