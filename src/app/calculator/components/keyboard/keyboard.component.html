@@ -1,0 +1,16 @@
+<div class="keyboard">
+    <table>
+        <tr *ngFor="let items of keys; last as isLast; first as isFirstRow">
+            <ng-template ngFor let-key [ngForOf]="items" let-isFirst = 'first' let-isLastInRow = 'last'>
+                <td *ngIf="isFirst && isLast; else default" class = 'null' colspan = '2'>
+                    <app-calculator-keys-comp (change) = "change($event)" [key] = 'key' [isFirstRow] = 'isFirstRow' [isLastInRow] = 'isLastInRow'></app-calculator-keys-comp>
+                </td>
+                <ng-template #default>
+                    <td>
+                        <app-calculator-keys-comp (change) = "change($event)" [key] = 'key' [isFirstRow] = 'isFirstRow' [isLastInRow] = 'isLastInRow' ></app-calculator-keys-comp>
+                    </td>
+                </ng-template>
+            </ng-template>
+        </tr>
+    </table>
+</div>

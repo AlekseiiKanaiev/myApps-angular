@@ -1,0 +1,13 @@
+#volume{
+    cursor: pointer;
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background-color: rgb(157, 150, 142);
+    border: 1px solid #000;
+    box-shadow: 3px 3px 5px;
+    
+}
+#volume:focus{
+    outline: none;
+}

@@ -1,0 +1,6 @@
+<td class="drum-pad" (click) = 'onClick()' id="{{ item.id }}" 
+    [ngClass]="{activePadStyle: isClicked && isPower, inactivePadStyle: isClicked && !isPower}">
+    <p>{{ item.keyTrigger }}</p>
+    <!-- <audio src="{{ item.url }}" class="clip" id="{{ item.keyTrigger }}"></audio> -->
+</td>
+

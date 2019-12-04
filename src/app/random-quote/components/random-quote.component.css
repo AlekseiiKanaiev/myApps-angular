@@ -1,0 +1,10 @@
+#wrap {
+    color: white;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color 2s ease-in;
+}
