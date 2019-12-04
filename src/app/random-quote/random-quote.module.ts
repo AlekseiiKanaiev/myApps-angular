@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RandomQuoteComponent } from './components/random-quote.component';
 import { QouteBoxComponent } from './components/quote-box/quote-box.component';
 import { QuoteMessageComponent } from './components/quote-box/quote-message/quote-message.component';
 import { ButtonsComponent } from './components/quote-box/buttons/buttons.component';
 import { GetQuoteService } from './_services/getQuote.service';
+import { ColorizeSerivice } from './_services/colorize.service';
 
 const randomQuoteRoutes: Routes = [
     {path: 'random-qoute', component: RandomQuoteComponent}
@@ -14,7 +16,8 @@ const randomQuoteRoutes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(randomQuoteRoutes)
+        RouterModule.forRoot(randomQuoteRoutes),
+        FontAwesomeModule
     ],
     declarations: [
         RandomQuoteComponent,
@@ -23,7 +26,8 @@ const randomQuoteRoutes: Routes = [
         ButtonsComponent
     ],
     providers: [
-        GetQuoteService
+        GetQuoteService,
+        ColorizeSerivice
     ],
     exports: [
         RouterModule

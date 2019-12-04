@@ -20,7 +20,7 @@ export class CalculatorService {
         this.obsValue.next(this.value);
     }
 
-    takeNum (value: string): void {
+    takeNum(value: string): void {
         if (!this.isEnd) {
             if (value === '.') {
                 if (!this.isDot) {
@@ -43,7 +43,7 @@ export class CalculatorService {
         }
     }
 
-    takeSign (value: string) {
+    takeSign(value: string) {
         console.log('in serv ' + value);
         console.log(value === '+');
         switch (value) {

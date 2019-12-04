@@ -19,7 +19,6 @@ export class ListOfBooksComponent implements OnInit {
     }
 
     openModal(template: TemplateRef<any>) {
-        console.log(1);
         this.modalRef = this.modalServ.show(template);
     }
 

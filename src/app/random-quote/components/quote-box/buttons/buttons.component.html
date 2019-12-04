@@ -1,1 +1,9 @@
-<p>buttons works!</p>
+<div id="buttons">
+    <a #twit href="{{ twitterHtef }}" id="tweet-quote" target="blank" [ngStyle]="{color: color}">
+        <fa-icon [icon] = twitterIcon class="button"></fa-icon>
+    </a>
+    <a #thumb href="{{ thumblerHref }}" id="thumbler-quote" target="blank" [ngStyle]="{color: color}">
+        <fa-icon [icon] = thumblerIcon class="button"></fa-icon>
+    </a>
+    <button class="button" id="new-quote-button" (click) = 'getNewQuote()' [ngStyle]="{backgroundColor: color}">New quote</button>
+</div>

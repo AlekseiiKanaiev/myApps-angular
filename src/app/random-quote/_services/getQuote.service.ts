@@ -9,20 +9,19 @@ import { map } from 'rxjs/operators';
 export class GetQuoteService {
     constructor(private http: HttpClient) {}
 
-    getRandomQuote(): Observable<Quote> {
-        return this.http.get<Quote[]>(URL).pipe(
-           map(data => data[Math.floor(Math.random() * data.length)])
+    getQuotes(): Observable<Quote[]> {
+        return this.http.get<any>(URL).pipe(
+           map(data => data.quotes)
         );
     }
-
-    getRandomQuotePromise(): Promise<any> {
+    getQuotesPromise(): Promise<any> {
         return new Promise((resolve, reject) => {
             const request = new XMLHttpRequest();
             request.open('GET', URL);
             request.onload = () => (request.status === 200) ? resolve(request.response) : reject(Error(request.statusText));
             request.onerror = () => reject(Error('Network error'));
             request.send();
-            // console.log('submit');
+            console.log('submit');
         }).then(JSON.parse);
     }
 }

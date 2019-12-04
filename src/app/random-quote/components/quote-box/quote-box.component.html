@@ -1,4 +1,4 @@
 <div id="quote-box">
     <app-random-quote-message [randomQuote] = 'randomQuote'></app-random-quote-message>
-    <app-random-quote-buttons></app-random-quote-buttons>
+    <app-random-quote-buttons (getRandomQuote) = 'getRandomQuote()' [randomQuote] = 'randomQuote'></app-random-quote-buttons>
 </div>
