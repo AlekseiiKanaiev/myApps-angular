@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RandomQuoteComponent } from './components/random-quote.component';
 import { QouteBoxComponent } from './components/quote-box/quote-box.component';
@@ -17,6 +18,7 @@ const randomQuoteRoutes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forRoot(randomQuoteRoutes),
+        BrowserAnimationsModule,
         FontAwesomeModule
     ],
     declarations: [
@@ -30,7 +32,8 @@ const randomQuoteRoutes: Routes = [
         ColorizeSerivice
     ],
     exports: [
-        RouterModule
+        RouterModule,
+        BrowserAnimationsModule
     ]
 })
 export class RandomQuoteModule {}

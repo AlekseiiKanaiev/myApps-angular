@@ -6,6 +6,7 @@ export class ColorizeSerivice {
     private color: string;
     setRandomColor() {
         if (this.color === COLORS[Math.floor(Math.random() * COLORS.length)]) {
+            console.log(1);
             this.setRandomColor();
         } else {
             this.color = COLORS[Math.floor(Math.random() * COLORS.length)];

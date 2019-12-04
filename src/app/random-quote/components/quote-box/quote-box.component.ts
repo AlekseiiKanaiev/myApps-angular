@@ -10,7 +10,6 @@ import { ColorizeSerivice } from '../../_services/colorize.service';
 })
 export class QouteBoxComponent implements OnInit {
   private randomQuote: Quote;
-  // private quotes: Quote[];
 
   constructor(private getQuoteServ: GetQuoteService) {}
 

@@ -14,6 +14,7 @@
 }
 a{
     margin: 0px 5px 0px 5px;
+    transition: color 3s ease;
 }
 #new-quote-button{
     width: fit-content;
@@ -22,4 +23,5 @@ a{
     border-radius: 4px;
     margin-left: auto;
     color: white;
+    transition: background-color 3s ease;
 }

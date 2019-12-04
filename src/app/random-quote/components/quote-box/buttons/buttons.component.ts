@@ -47,6 +47,7 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
 
   private getNewQuote() {
     this.quoteServ.getNewRandomQuote();
+    this.colorServ.setRandomColor();
   }
 
 }
