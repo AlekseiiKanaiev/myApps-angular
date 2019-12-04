@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ColorizeSerivice } from '../_services/colorize.service';
 import { GetQuoteService } from '../_services/getQuote.service';
 
@@ -7,18 +6,9 @@ import { GetQuoteService } from '../_services/getQuote.service';
     selector: 'app-random-qoute',
     templateUrl: './random-quote.component.html',
     styleUrls: ['./random-quote.component.css'],
-    animations: [
-        trigger('changeColor', [
-            state('color1', style({backgroundColor: 'white'})),
-            state('color2', style({backgroundColor: 'red'})),
-            transition('color1<=>color2', animate('3s ease'))
-        ])
-
-    ]
 })
 export class RandomQuoteComponent implements OnInit, AfterViewInit {
     private color = 'white';
-    private isChangeColor = true;
 
     constructor(private colorServ: ColorizeSerivice,
                 private quoteServ: GetQuoteService,
@@ -29,7 +19,6 @@ export class RandomQuoteComponent implements OnInit, AfterViewInit {
             color => {
                 console.log(color);
                 this.color = color;
-                this.isChangeColor = !this.isChangeColor;
             }
         );
         this.quoteServ.setQuotes();

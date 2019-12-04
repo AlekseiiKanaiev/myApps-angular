@@ -1,5 +1,5 @@
-<div id="quote-message" [ngStyle]="{color: color}">
-    <div id="text">
+<div id="quote-message" [ngStyle]="{color: color}" [@fadeOut] = 'showMessageState'>
+    <div id="text" >
         <fa-icon class="fa fa-quote-left" [icon] = 'quoteIcon'></fa-icon>
         <span *ngIf="randomQuote" id>{{ randomQuote.quote }}</span>
     </div>

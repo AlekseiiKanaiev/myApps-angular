@@ -1,5 +1,5 @@
 #quote-message{
-    transition: color 3s ease;
+    transition: color 3s ease-in;
 }
 #text{
     font-size: 24px;
