@@ -5,44 +5,61 @@
         <a href="#work">work</a>
         <a href="#contacts">contacts</a>
     </nav>
-  </header>
-  <div id="about">
-    <h1>Hello, I'm Kanaiev Oleksii</h1>
-    <p>a web developer begginer</p>
-  </div>
-  <div id="work">
-    <h2>List of my apps</h2>
-    <nav>
-      <ul>
-        <li>
-            <a routerLink = 'calculator'>
-              <img src="" alt="">
-              Calculator
-            </a>
-        </li>
-        <li>
-            <a routerLink = 'bookstore'>
-              Bookstore
-            </a>
-        </li>
-        <li>
-            <a routerLink = 'drum-machine'>
-              Drum-Machine
-            </a>
-        </li>
-        <li>
-            <a routerLink = 'random-qoute'>
-              Random Quote
-            </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+    </header>
+    <div id="about">
+      <h1>Hello, I'm Kanaiev Oleksii</h1>
+      <p>a web developer begginer</p>
+    </div>
+    <div id="work">
+      <h2>List of my apps</h2>
+      <div id="apps-grid">
+        <div class="item-grid">
+          <a routerLink='calculator' class="app-link">
+            <img src="assets/img/calculator.png" alt="Calculator">
+            <p>Calculator</p>
+          </a>
+        </div>
+        <div class="item-grid">
+          <a routerLink='bookstore' class="app-link">
+            <img src="assets/img/bookstore.png" alt="Bookstore">
+            <p>Bookstore</p>
+          </a>
+        </div>
+        <div class="item-grid">
+          <a routerLink='drum-machine' class="app-link">
+            <img src="assets/img/drum-machine.png" alt="Drum-Machine">
+            <p>Drum-Machine</p>
+          </a>
+        </div>
+        <div class="item-grid">
+          <a routerLink='random-qoute' class="app-link">
+            <img src="assets/img/random-quote.png" alt="Random Quote">
+            <p>Random Quote</p>
+          </a>
+        </div>
+      </div>
+      </div>
   <div id="contacts">
-  
+    <h2>Lets work together...</h2>
+    <div id="contact-links">
+      <a href="https://github.com/AlekseiiKanaiev" class="c-link">
+        <fa-icon [icon] = 'gihubIcon' class="c-icon"></fa-icon>Github
+      </a>
+      <a href="https://www.linkedin.com/in/oleksii-kanaev-94553b171" class="c-link">
+        <fa-icon [icon] = 'linkedinIcon' class="c-icon"></fa-icon>LinkedIn
+      </a>
+      <a href="https://www.facebook.com/alexeykanaevkh" class="c-link">
+        <fa-icon [icon] = 'facebookIcon' class="c-icon"></fa-icon>Facebook
+      </a>
+      <a href="https://t.me/kanaev_oleksii" class="c-link">
+        <fa-icon [icon] = 'telegrammIcon' class="c-icon"></fa-icon>Telegramm
+      </a>
+      <a href="https://join.skype.com/invite/c1s98qC0khB6" class="c-link">
+        <fa-icon [icon] = 'skypeIcon' class="c-icon"></fa-icon>Skype
+      </a>
+    </div>
   </div>
   <footer>
-  
   </footer>
 </div>
 
