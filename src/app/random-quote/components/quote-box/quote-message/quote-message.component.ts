@@ -38,7 +38,7 @@ export class QuoteMessageComponent implements OnInit {
           setTimeout(() => {
             this.showMessageState = 'show';
             this.randomQuote = data;
-          }, 1);
+          }, 1000);
         } else {
           this.showMessageState = 'show';
           this.randomQuote = data;
