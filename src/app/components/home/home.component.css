@@ -1,0 +1,118 @@
+/* :root{
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-grey: #303841;
+} */
+#home{
+    font-family: Poppins, sans-serif;
+    color: var(--main-white);
+}
+a:hover{
+    text-decoration: none;
+}
+#navigation {
+    background-color: var(--main-red);
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    position: fixed;
+    width: 100%;
+}
+#navigation a {
+    color: var(--main-white);
+    font-size: 22px;
+    line-height: 60px;
+    padding: 0 10px;
+}
+#navigation a:hover{
+    cursor: pointer;
+    background-color: var(--main-blue);
+}
+#navigation a::first-letter{
+    text-transform: uppercase;
+}
+
+#about{
+    background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    height: 100vh;
+    color: var(--main-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#about h1{
+    font-size: 60px;
+    margin: 50px;
+}
+#about p{
+    color: var(--main-red);
+    margin: 30px;
+    font-size: 30px;
+}
+
+#work {
+    background-color: var(--main-blue);
+    
+    padding: 100px 20px;
+}
+#work h2{
+    font-size: 42px;
+    border-bottom: 2px solid var(--main-white);
+    width: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+}
+#work #apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px 100px;
+    margin: 0 100px;
+}
+#work .item-grid {
+    background-color: var(--main-grey);
+}
+#work .item-grid .app-link{
+    display: flex;
+    flex-direction: column;
+}
+#work .item-grid img{
+    width: 100%;
+    height: 200px;
+}
+#work .item-grid p{
+    color: var(--main-white);
+    margin: 5px;
+}
+
+#contacts{
+    background-color: var(--main-grey);
+    padding: 80px 20px;
+}
+#contacts h2{
+    margin-bottom: 20px;
+}
+#contacts #contact-links {
+    display: flex;
+    justify-content: center;
+}
+#contacts #contact-links .c-link{
+    margin: 0 20px;
+    color: var(--main-white);
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+#contacts #contact-links .c-link:hover{
+    transform: translateY(10px);
+}
+#contacts #contact-links .c-link .c-icon{
+    margin-right: 5px;
+}
+footer{
+    border-top: 4px solid var(--main-red);
+    height: 100px;
+    background-color: var(--main-grey);
+}
