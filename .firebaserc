@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "myapps-angular-kanaiev": {
+      "hosting": {
+        "myApps-angular": [
+          "myapps-angular-kanaiev"
+        ]
+      }
+    }
+  }
+}
