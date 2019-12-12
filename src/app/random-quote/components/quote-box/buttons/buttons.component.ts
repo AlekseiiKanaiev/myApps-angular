@@ -45,7 +45,7 @@ export class ButtonsComponent implements OnInit, AfterContentChecked {
     this.thumb.nativeElement.setAttribute('href', this.thumblerHref);
   }
 
-  private getNewQuote() {
+  getNewQuote() {
     this.quoteServ.getNewRandomQuote();
     this.colorServ.setRandomColor();
   }

@@ -14,7 +14,7 @@ export class SearchBarComponent {
 
     constructor(private bookServ: BooksService, private alertServ: AlertService) {}
 
-    private search(): void {
+    search(): void {
         if (this.book) {
             // console.log(this.book);
             // this.bookServ.setBook(this.book);

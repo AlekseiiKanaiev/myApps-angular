@@ -1,7 +1,8 @@
 /**The alert component passes alert messages to the template
  * whenever a message is received from the alert service.
  * It does this by subscribing to the alert service's
- * getMessage() method which returns an Observable. */
+ * getMessage() method which returns an Observable.
+ */
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AlertService } from '../_services/alertService.service';
@@ -17,7 +18,7 @@ import { AlertService } from '../_services/alertService.service';
 })
 export class AlertComponent implements OnInit, OnDestroy {
     private subs: Subscription;
-    private message: any;
+    message: any;
 
     constructor(private alertService: AlertService) {}
 
