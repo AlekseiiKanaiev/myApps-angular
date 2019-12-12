@@ -8,7 +8,7 @@ import { BankSet } from '../../_models/dataSet.model';
   styleUrls: ['./drum-pads.component.css']
 })
 export class DrumPadsComponent implements OnInit {
-  private dataSet: BankSet[][];
+  dataSet: BankSet[][];
 
   constructor(private setDataServ: SetDataService) { }
 

@@ -7,7 +7,7 @@ import { DisplayService } from '../../../_services/display.service';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  private message = '';
+  message = '';
   constructor(private displayServ: DisplayService) { }
 
   ngOnInit() {

@@ -9,7 +9,7 @@ import { DisplayService } from '../../../_services/display.service';
   styleUrls: ['./bank-switch.component.css', '../power-switch/power-switch.component.css']
 })
 export class BankSwitchComponent implements OnInit {
-  private floatVar = 'left';
+  floatVar = 'left';
   private isPower = true;
 
   constructor(private stateServ: StateService,

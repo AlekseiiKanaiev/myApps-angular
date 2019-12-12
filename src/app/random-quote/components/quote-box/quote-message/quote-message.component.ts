@@ -18,10 +18,10 @@ import { trigger, style, state, transition, animate, keyframes } from '@angular/
   ]
 })
 export class QuoteMessageComponent implements OnInit {
-  private randomQuote: Quote;
-  private quoteIcon = faQuoteLeft;
-  private color = 'white';
-  private showMessageState = 'hide';
+  randomQuote: Quote;
+  quoteIcon = faQuoteLeft;
+  color = 'white';
+  showMessageState = 'hide';
 
   constructor(private colorServ: ColorizeSerivice, private quotServ: GetQuoteService) { }
 

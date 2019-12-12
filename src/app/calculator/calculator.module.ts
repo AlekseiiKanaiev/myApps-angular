@@ -5,8 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { CalculatorComponent } from './components/calculator.component';
 import { CalculatorDisplayComponent } from './components/display/display.component';
 import { CalculatorKeyboardComponent } from './components/keyboard/keyboard.component';
-import { CalculatorNumKeyComponent } from './components/keyboard/nuberKey/numberKey.component';
-import { CalculatorSignKeyComponent } from './components/keyboard/signKey/signKey.component';
 import { CalculatorKeysComponent } from './components/keyboard/keys/keys.component';
 
 
@@ -23,8 +21,6 @@ const calculatorRotes: Routes = [
         CalculatorComponent,
         CalculatorDisplayComponent,
         CalculatorKeyboardComponent,
-        CalculatorNumKeyComponent,
-        CalculatorSignKeyComponent,
         CalculatorKeysComponent
     ],
     exports: [

@@ -8,7 +8,7 @@ import { GetQuoteService } from '../_services/getQuote.service';
     styleUrls: ['./random-quote.component.css'],
 })
 export class RandomQuoteComponent implements OnInit, AfterViewInit {
-    private color = 'white';
+    color = 'white';
 
     constructor(private colorServ: ColorizeSerivice,
                 private quoteServ: GetQuoteService,

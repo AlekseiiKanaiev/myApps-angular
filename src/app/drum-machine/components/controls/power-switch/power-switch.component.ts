@@ -7,7 +7,7 @@ import { StateService } from '../../../_services/state.service';
   styleUrls: ['./power-switch.component.css']
 })
 export class PowerSwitchComponent implements OnInit {
-  private floatVar = 'left';
+  floatVar = 'left';
   private isPower = true;
 
   constructor(private stateServ: StateService) { }

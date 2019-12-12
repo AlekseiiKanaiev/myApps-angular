@@ -7,11 +7,11 @@ import { faGithub, faLinkedin, faFacebook, faTelegram, faSkype } from '@fortawes
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private gihubIcon = faGithub;
-  private linkedinIcon = faLinkedin;
-  private facebookIcon = faFacebook;
-  private telegrammIcon = faTelegram;
-  private skypeIcon = faSkype;
+  gihubIcon = faGithub;
+  linkedinIcon = faLinkedin;
+  facebookIcon = faFacebook;
+  telegrammIcon = faTelegram;
+  skypeIcon = faSkype;
 
   constructor() { }
 

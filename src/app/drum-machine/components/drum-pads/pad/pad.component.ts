@@ -12,8 +12,8 @@ import { StateService } from '../../../_services/state.service';
 export class PadComponent implements OnInit {
   @Input() item: BankSet;
 
-  private isPower = true;
-  private isClicked = false;
+  isPower = true;
+  isClicked = false;
 
   constructor(private displayServ: DisplayService,
               private soundServ: PlaySoundService,

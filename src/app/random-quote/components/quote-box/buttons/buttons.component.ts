@@ -10,11 +10,11 @@ import { GetQuoteService } from 'src/app/random-quote/_services/getQuote.service
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent implements OnInit, AfterContentChecked {
-  private twitterIcon = faTwitterSquare;
-  private thumblerIcon = faTumblrSquare;
-  private twitterHtef = 'https://twitter.com';
-  private thumblerHref = 'https://www.tumblr.com';
-  private color = 'white';
+  twitterIcon = faTwitterSquare;
+  thumblerIcon = faTumblrSquare;
+  twitterHtef = 'https://twitter.com';
+  thumblerHref = 'https://www.tumblr.com';
+  color = 'white';
   private randomQuote: Quote;
 
   @ViewChild('twit', {static: false}) twit: ElementRef;

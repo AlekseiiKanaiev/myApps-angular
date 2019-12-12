@@ -7,7 +7,7 @@ import store from '../../store/store';
     styleUrls: ['./display.component.css']
 })
 export class CalculatorDisplayComponent implements OnInit {
-    private value = '0';
+    value = '0';
 
     ngOnInit(): void {
         store.subscribe(

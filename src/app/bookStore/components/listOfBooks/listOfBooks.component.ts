@@ -9,9 +9,9 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 })
 export class ListOfBooksComponent implements OnInit {
     @Input() bookList: string[];
-    private modalRef: BsModalRef;
-    private endIndex = 5;
-    private isMore = true;
+    modalRef: BsModalRef;
+    endIndex = 5;
+    isMore = true;
 
     constructor(private modalServ: BsModalService) {}
 

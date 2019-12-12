@@ -15,15 +15,16 @@ export class CalculatorKeysComponent implements OnInit {
     @Input() isLastInRow: boolean;
     @Input() isFirstRow: boolean;
 
+    // tslint:disable-next-line: no-output-native
     @Output() change = new EventEmitter<boolean>();
 
-    click(ivent: MouseEvent): void {
-        const value = ivent.toElement.innerHTML.trim();
+    click(event: MouseEvent): void {
+        const value = event.toElement.innerHTML.trim();
         if (this.re.test(value)) {
-            store.dispatch({type: NUMBER, value: value});
+            store.dispatch({type: NUMBER, value});
             this.change.emit(false);
         } else {
-            store.dispatch({type: SIGN, value: value});
+            store.dispatch({type: SIGN, value});
             if (value === 'C') {
                 this.change.emit(true);
             } else if (value !== 'AC') {
@@ -31,12 +32,7 @@ export class CalculatorKeysComponent implements OnInit {
             }
         }
     }
-    ngOnInit () {
+    ngOnInit() {
         // console.log(this.isLastInRow);
     }
-
-    // click(value: MouseEvent): void {
-    //     console.log(value.toElement.innerHTML);
-    //     store.dispatch({type: NUMBER, value: value.toElement.innerHTML});
-    // }
 }
