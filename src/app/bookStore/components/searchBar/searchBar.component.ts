@@ -10,7 +10,8 @@ import { AlertService } from 'src/app/_services/alertService.service';
 export class SearchBarComponent {
     @Output() searchBook = new EventEmitter<string>();
 
-    private book: string;
+    book: string;
+
     constructor(private bookServ: BooksService, private alertServ: AlertService) {}
 
     private search(): void {

@@ -63,12 +63,14 @@ export class CalculatorService {
                 this.changeValue('0');
                 break;
             case '±':
-                this.changeValue((parseFloat(this.value) * -1).toString());
+                this.result = (parseFloat(this.value) * -1);
+                this.changeValue(this.result.toString());
                 this.isEnd = true;
                 break;
             case '%':
+                this.result = (parseFloat(this.value) / 100);
+                this.changeValue(this.result.toString());
                 this.isEnd = true;
-                this.changeValue((parseFloat(this.value) / 100).toString());
                 break;
             case '=':
                 this.result = (this.sign && this.sign !== '=') ? this.calculate(parseFloat(this.value)) : parseFloat(this.value);

@@ -7,7 +7,7 @@ import { BooksService } from '../_services/books.service';
     styleUrls: ['bookStore.component.css']
 })
 export class BookStoreComponent {
-    private bookList: string[];
+    bookList: string[];
     constructor(private bookServ: BooksService) {}
 
     searchBook(book: string) {
@@ -17,11 +17,11 @@ export class BookStoreComponent {
                 this.bookList = res.items.map(el => el.volumeInfo)
                                         .map(el => {
                                             return Object.assign({}, {
-                                                'title': el.title,
-                                                'authors': (el.authors) ? el.authors.join(', ') : 'None',
-                                                'description': (el.description) ? el.description : 'There is no description',
-                                                'image': (el.imageLinks) ? el.imageLinks.smallThumbnail : 'There is no image',
-                                                'price': (res.items.saleInfo) ? res.items.saleInfo.listPrice.amount : 'None'
+                                                title: el.title,
+                                                authors: (el.authors) ? el.authors.join(', ') : 'None',
+                                                description: (el.description) ? el.description : 'There is no description',
+                                                image: (el.imageLinks) ? el.imageLinks.smallThumbnail : 'There is no image',
+                                                price: (res.items.saleInfo) ? res.items.saleInfo.listPrice.amount : 'None'
                                             });
                                         });
             }

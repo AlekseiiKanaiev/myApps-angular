@@ -9,7 +9,6 @@ import { DisplayService } from '../../../_services/display.service';
 })
 export class VolumeBarComponent implements OnInit, AfterViewChecked {
   private isPower = true;
-  private soundVolume = 0.3;
   @ViewChild('volume', {static: false}) volume: ElementRef;
 
   constructor(private stateServ: StateService, private displayServ: DisplayService) { }
