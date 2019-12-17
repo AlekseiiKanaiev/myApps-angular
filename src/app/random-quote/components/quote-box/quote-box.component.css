@@ -10,3 +10,8 @@
     flex-direction: column;
     justify-content: flex-end;
 }
+@media only screen and (max-width: 600px){
+    #quote-box {
+        width: 70%;
+    }
+}
