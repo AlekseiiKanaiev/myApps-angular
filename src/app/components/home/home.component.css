@@ -1,6 +1,7 @@
 #home{
     font-family: Poppins, sans-serif;
     color: var(--main-white);
+    text-align: center;
 }
 a:hover{
     text-decoration: none;

@@ -22,3 +22,33 @@ td{
 p{
     margin: auto;
 }
+@media only screen and (max-width: 670px) and (orientation: landscape){
+    td{
+        width: 80px;
+        height: 64px;
+    }
+}
+@media only screen and (max-width: 610px) and (orientation: landscape){
+    td{
+        width: 60px;
+        height: 48px;
+    }
+}
+@media only screen and (max-width: 445px) and (orientation: portrait){
+    td{
+        width: 80px;
+        height: 64px;
+    }
+}
+@media only screen and (max-width: 385px) and (orientation: portrait){
+    td{
+        width: 60px;
+        height: 48px;
+    }
+}
+@media only screen and (max-width: 325px) and (orientation: portrait){
+    td{
+        width: 50px;
+        height: 40px;
+    }
+}
