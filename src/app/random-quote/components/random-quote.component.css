@@ -1,10 +1,20 @@
 #wrap {
     color: white;
-    height: 100%;
+    min-height: 100vh;
     text-align: center;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: background-color 2s ease-in;
+}
+@media only screen and (max-width: 600px){
+    h3 {
+        font-size: 26px;
+    }
+}
+@media only screen and (max-width: 500px){
+    h3 {
+        font-size: 24px;
+    }
 }

@@ -4,41 +4,49 @@
         <a href="#about">about</a>
         <a href="#work">work</a>
         <a href="#contacts">contacts</a>
+          <div id="hum-menu" (click) = 'isCollapsed = !isCollapsed'>
+            <fa-icon [icon] = humIcon id="icon"></fa-icon>
+          </div>
     </nav>
-    </header>
-    <div id="about">
-      <h1>Hello, I'm Kanaiev Oleksii</h1>
-      <p>a web developer begginer</p>
+    <div id="links" [ngClass]="{expand: !isCollapsed}" (click) = 'isCollapsed = !isCollapsed'>
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#contacts">contacts</a>
+    </div>  
+  </header>
+  <div id="about">
+    <h1>Hello, I'm <span id="name">Kanaiev Oleksii</span></h1>
+    <p>a web developer begginer</p>
+  </div>
+  <div id="work">
+    <h2>List of my apps</h2>
+    <div id="apps-grid">
+      <div class="item-grid">
+        <a routerLink='calculator' class="app-link">
+          <img src="assets/img/calculator.png" alt="Calculator">
+          <p>Calculator</p>
+        </a>
+      </div>
+      <div class="item-grid">
+        <a routerLink='bookstore' class="app-link">
+          <img src="assets/img/bookstore.png" alt="Bookstore">
+          <p>Bookstore</p>
+        </a>
+      </div>
+      <div class="item-grid">
+        <a routerLink='drum-machine' class="app-link">
+          <img src="assets/img/drum-machine.png" alt="Drum-Machine">
+          <p>Drum-Machine</p>
+        </a>
+      </div>
+      <div class="item-grid">
+        <a routerLink='random-qoute' class="app-link">
+          <img src="assets/img/random-quote.png" alt="Random Quote">
+          <p>Random Quote</p>
+        </a>
+      </div>
     </div>
-    <div id="work">
-      <h2>List of my apps</h2>
-      <div id="apps-grid">
-        <div class="item-grid">
-          <a routerLink='calculator' class="app-link">
-            <img src="assets/img/calculator.png" alt="Calculator">
-            <p>Calculator</p>
-          </a>
-        </div>
-        <div class="item-grid">
-          <a routerLink='bookstore' class="app-link">
-            <img src="assets/img/bookstore.png" alt="Bookstore">
-            <p>Bookstore</p>
-          </a>
-        </div>
-        <div class="item-grid">
-          <a routerLink='drum-machine' class="app-link">
-            <img src="assets/img/drum-machine.png" alt="Drum-Machine">
-            <p>Drum-Machine</p>
-          </a>
-        </div>
-        <div class="item-grid">
-          <a routerLink='random-qoute' class="app-link">
-            <img src="assets/img/random-quote.png" alt="Random Quote">
-            <p>Random Quote</p>
-          </a>
-        </div>
-      </div>
-      </div>
+  </div>
   <div id="contacts">
     <h2>Let's work together...</h2>
     <div id="contact-links">

@@ -1,12 +1,7 @@
-/* :root{
-    --main-white: #f0f0f0;
-    --main-red: #be3144;
-    --main-blue: #45567d;
-    --main-grey: #303841;
-} */
 #home{
     font-family: Poppins, sans-serif;
     color: var(--main-white);
+    text-align: center;
 }
 a:hover{
     text-decoration: none;
@@ -20,17 +15,45 @@ a:hover{
     position: fixed;
     width: 100%;
 }
-#navigation a {
+#navigation #hum-menu{
+    display: none;
+}
+#navigation #hum-menu #icon{
+    color: var(--main-white);
+    font-size: 40px;
+}
+#links{
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    background-color: rgba(190, 49, 68, 0.8);
+    overflow: hidden;
+    transform: scaleY(0);
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -o-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: transform 0.6s ease;
+    -moz-transition: transform 0.6s ease;
+    -o-transition: transform 0.6s ease;
+    transition: transform 0.6s ease;
+}
+#links.expand {
+    transform: scaleY(1);
+}
+#navigation a, #links a{
+    display: block;
     color: var(--main-white);
     font-size: 22px;
     line-height: 60px;
     padding: 0 10px;
+    z-index: 1;
 }
-#navigation a:hover{
+#navigation a:hover, #links a:hover{
     cursor: pointer;
     background-color: var(--main-blue);
 }
-#navigation a::first-letter{
+#navigation a::first-letter, #links a::first-letter{
     text-transform: uppercase;
 }
 
@@ -46,6 +69,9 @@ a:hover{
     font-size: 60px;
     margin: 50px;
 }
+#about #name {
+    white-space: nowrap;
+}
 #about p{
     color: var(--main-red);
     margin: 30px;
@@ -60,7 +86,7 @@ a:hover{
 #work h2{
     font-size: 42px;
     border-bottom: 2px solid var(--main-white);
-    width: 50%;
+    width: fit-content;
     margin: auto;
     margin-bottom: 40px;
     padding-bottom: 10px;
@@ -115,4 +141,58 @@ footer{
     border-top: 4px solid var(--main-red);
     height: 100px;
     background-color: var(--main-grey);
+}
+
+@media only screen and (max-width: 800px){
+    #work #apps-grid {
+        grid-gap: 20px 50px;
+        margin: 0 50px;
+    }
+}
+@media only screen and (max-width: 610px){
+    #contacts #contact-links .c-link{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 500px){
+    #about #name {
+        white-space: pre-wrap;
+    }
+    #work, #contacts {
+        padding: 50px 20px;
+    }
+    #work #apps-grid {
+        grid-template-columns: auto;
+    }
+    #contacts #contact-links {
+        flex-direction: column;
+    }
+    #contacts #contact-links .c-link{
+        font-size: 20px;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 375px){
+    #navigation{
+        justify-content: center;
+        padding: 0;
+    }
+    #navigation #hum-menu{
+        display: block;
+        cursor: pointer;
+    }
+    #navigation a {
+        display: none;
+    }
+    #about h1{
+        font-size: 50px;
+        margin: 20px;
+    }
+    #work h2{
+        font-size: 36px;
+    }
+    #work #apps-grid {
+        margin: 0 20px;
+    }
+    
 }
