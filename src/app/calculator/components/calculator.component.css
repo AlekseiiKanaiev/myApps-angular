@@ -2,6 +2,9 @@ h3{
     text-align: center;
 }
 #calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
     width: 100%;
     margin: auto;
