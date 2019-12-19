@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href https://AlekseiiKanaiev.github.io/myApps-angular/ && angular-cli-ghpages --branch gh-pages"
+    "deploy": "ng build --prod && alias firebase=\"`npm config get prefix`/bin/firebase\" && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +34,7 @@
     "firebase": ">= 5.5.7 <8"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
     "@angular-devkit/build-angular": "~0.803.10",
     "@angular/cli": "~8.3.10",
     "@angular/compiler-cli": "~8.2.11",
@@ -43,6 +44,10 @@
     "@types/node": "~8.9.4",
     "bootstrap": "^4.4.1",
     "codelyzer": "^5.0.0",
+    "firebase-tools": "^6.12.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -53,11 +58,6 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3",
-    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
-    "firebase-tools": "^6.10.0",
-    "fuzzy": "^0.1.3",
-    "inquirer": "^6.2.2",
-    "inquirer-autocomplete-prompt": "^1.0.1"
+    "typescript": "~3.5.3"
   }
 }
