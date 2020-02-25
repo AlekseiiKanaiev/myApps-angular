@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { RandomQuoteModule } from './random-quote/random-quote.module';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import { RandomQuoteModule } from './random-quote/random-quote.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     AppRoutingModule,
     CalculatorModule,
     BookStoreModule,
@@ -32,7 +35,7 @@ import { RandomQuoteModule } from './random-quote/random-quote.module';
     RandomQuoteModule
   ],
   providers: [
-    AlertService
+    AlertService,
   ],
   bootstrap: [AppComponent],
 })

@@ -137,6 +137,18 @@ a:hover{
 #contacts #contact-links .c-link .c-icon{
     margin-right: 5px;
 }
+.resume-but{
+    margin-top: 20px;
+    background-color: var(--main-red);
+    color: var(--main-white);
+    width: fit-content;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
 footer{
     border-top: 4px solid var(--main-red);
     height: 100px;
