@@ -2,5 +2,7 @@
     Hello, {{ user.displayName }}
     <br>
     Your email: {{ user.email }}
+    <br>
+    <a routerLink = '/authentication/change-pass'>Change password</a>
 </div>
 <button (click) = "logOut()">Log out</button>

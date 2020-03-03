@@ -74,8 +74,8 @@ export class AuthService {
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password);
       console.log(res);
-      this.user = res.user;
       this.setUserToLocalstorage(res.user);
+      this.alertServ.success('You have been successfully logged', true);
       this.navigate('user');
     } catch (err) {
       return this.alertServ.error(err.message);
@@ -111,7 +111,7 @@ export class AuthService {
   }
 
   async forgotPassword(email: string) {
-    const actions = {url: `${this.url}/login`};
+    const actions = {url: `${this.url}/authentication/login`};
     try {
       const res = await this.afAuth.auth.sendPasswordResetEmail(email, actions);
       return this.alertServ.success('New password sent. Check your email box.');
@@ -120,12 +120,12 @@ export class AuthService {
     }
   }
 
-  changePassword(value: {oldPassword: string, password: string}) {
+  changePassword(value: {oldPassword: string, newPassword: string}) {
     if (this.user) {
       const credentials = firebase.auth.EmailAuthProvider.credential(this.user.email, value.oldPassword);
       this.user.reauthenticateWithCredential(credentials)
       .then(res => {
-        this.user.updatePassword(value.password);
+        this.user.updatePassword(value.newPassword);
         this.alertServ.success('Password has been changed successfully', true);
         this.navigate('user');
       })
