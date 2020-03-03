@@ -27,9 +27,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(value: {email: string, password: string}) {
+    console.log(1);
     this.submitted = true;
     if (!this.loginForm.invalid) {
-      this.authServ.doEmailAndPasswodLogin(value);
+      this.authServ.doEmailAndPasswordLogin(value);
     }
   }
 

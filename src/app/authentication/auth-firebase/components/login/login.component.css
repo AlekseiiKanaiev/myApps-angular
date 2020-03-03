@@ -9,7 +9,7 @@ button{
     width: 20px;
     height: 30px;
     display: inline-block;
-    background-image: url('../../../../assets/img/google-icon.svg');
+    background-image: url('../../../../../assets/img/google-icon.svg');
     background-repeat: no-repeat;
     background-size: 20px 43px;
     background-position: inherit;

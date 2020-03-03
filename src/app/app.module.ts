@@ -17,8 +17,6 @@ import { RandomQuoteModule } from './random-quote/random-quote.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <form [formGroup] = 'registerForm' (ngSubmit) = 'register(registerForm.value)'>
+                <form [formGroup] = 'registerForm' (ngSubmit)="register(registerForm.value)">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid': submitted && f.name.errors}">
                         <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
                             <div *ngIf="f.name.errors.required">Name is requiered</div>
-                            <div *ngIf="f.name.errors.minLength">Name must be at least 2 characters</div>
-                            <div *ngIf="f.name.errors.maxLength">Name must be no longer 24 characters</div>
+                            <div *ngIf="f.name.errors.minlength">Name must be at least 2 characters</div>
+                            <div *ngIf="f.name.errors.maxlength">Name must be no longer 24 characters</div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -25,7 +25,7 @@
                         <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
                         <div class="invalid-feedback" *ngIf="submitted && f.password.errors">
                             <div *ngIf="f.password.errors.required">Password is required</div>
-                            <div *ngIf="f.password.errors.minLength">Password must be at least 6 characters</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -37,15 +37,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="btn btn-primary">Register</div>
-                    </div>
-                    <div class="to-login">
-                        <a [routerLink]="['/login']" routerLinkActive="router-link-active" 
-                            class="login-link">
-                            Back to login
-                        </a>
+                        <div class="btn btn-primary" (click) = "register(registerForm.value)">Register</div>
                     </div>
                 </form>
+                <div class="to-login">
+                    <a routerLink="/authentication/login" routerLinkActive="router-link-active" 
+                        class="login-link">
+                        Back to login
+                    </a>
+                </div>
             </div>
         </div>
     </div>

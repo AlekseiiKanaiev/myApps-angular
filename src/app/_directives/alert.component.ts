@@ -10,11 +10,21 @@ import { AlertService } from '../_services/alertService.service';
 @Component({
     selector: 'app-auth-alert',
     templateUrl: './alert.component.html',
-    styles: [`#alert{
-        width: fit-content;
-        text-align: center;
-        margin: auto;
-    }`]
+    styles: [
+        `#alert{
+            width: fit-content;
+            text-align: center;
+            margin: auto;
+            cursor: pointer;
+        }
+        .alert-box{
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            margin: auto;
+        }`
+    ]
 })
 export class AlertComponent implements OnInit, OnDestroy {
     private subs: Subscription;
@@ -27,6 +37,11 @@ export class AlertComponent implements OnInit, OnDestroy {
             message => this.message = message
         );
     }
+
+    remove() {
+        this.alertService.clearAlert();
+    }
+
     ngOnDestroy() {
         this.subs.unsubscribe();
     }

@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../_services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthGuard implements CanActivate {
 
   constructor(private authServ: AuthService, private router: Router, private afAuth: AngularFireAuth) {}
@@ -14,16 +12,17 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    console.log(this.authServ.isLoggedIn());
     if (this.authServ.isLoggedIn()) {
-      if (state.url === '/login' || state.url === '/register') {
-        this.router.navigate(['user']);
+      if (state.url === '/authentication/login' || state.url === '/authentication/register') {
+        this.router.navigate(['authentication/user']);
       }
       return true;
     } else {
-      if (state.url === '/login' || state.url.startsWith('/register')) {
+      if (state.url === '/authentication/login' || state.url.startsWith('/authentication/register')) {
         return true;
       }
-      this.router.navigate(['login']);
+      this.router.navigate(['authentication/login']);
     }
   }
 }

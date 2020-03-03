@@ -5,7 +5,7 @@
                 <form [formGroup] = 'loginForm' (ngSubmit) = login(loginForm.value)>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" class="form-control" formControlName="email" [ngClass]="{is-invalid: submitted && f.email.errors}">
+                        <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
                         <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
                             <div *ngIf="f.email.errors.required">Email is required</div>
                             <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" formControlName="password" [ngClass]="{is-invalid: submitted && f.email.errors}">
+                        <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid': submitted && f.email.errors}">
                         <div class="invalid-feedback" *ngIf="submitted && f.password.errors">
                             <div *ngIf="f.password.errors.required">Password is required</div>
                             <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="to-register">
                     <p>Not regitred yet?</p>
-                    <a routerLink = "['/register']" routerLinkActivate = 'router-link-activate' 
+                    <a routerLink = "/authentication/register" routerLinkActivate = 'router-link-activate' 
                         class="link" id = 'register-link'>
                         Create account now
                     </a>

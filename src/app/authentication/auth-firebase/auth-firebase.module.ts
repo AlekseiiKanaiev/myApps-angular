@@ -14,9 +14,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { EmailVerificationComponent } from './components/email-verification/email-verification.component';
 
 const authRoutes: Routes = [
-  {path: 'user/login', component: LoginComponent, canActivate: [AuthGuard]},
-  {path: 'user/register', component: RegisterComponent, canActivate: [AuthGuard], pathMatch: 'full'},
-  {path: 'user/change-pass', component: ChangePassComponent, canActivate: [AuthGuard]}
+  {path: 'authentication/login', component: LoginComponent, canActivate: [AuthGuard]},
+  {path: 'authentication/register', component: RegisterComponent, canActivate: [AuthGuard], pathMatch: 'full'},
+  {path: 'authentication/change-pass', component: ChangePassComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

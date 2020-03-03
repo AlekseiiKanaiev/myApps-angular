@@ -6,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth-firebase/_guards/auth.guard';
 
 const loginRoutes: Routes = [
-  {path: 'user', component: UserComponent, canActivate: [AuthGuard], pathMatch: 'full'}
+  {path: 'authentication', redirectTo: 'authentication/user', pathMatch: 'full'},
+  {path: 'authentication/user', component: UserComponent, canActivate: [AuthGuard]}
 ];
 
 
@@ -17,6 +18,7 @@ const loginRoutes: Routes = [
     RouterModule.forRoot(loginRoutes),
     AuthFirebaseModule,
   ],
+  providers: [AuthGuard],
   exports: [RouterModule]
 })
 export class AuthenticationModule { }

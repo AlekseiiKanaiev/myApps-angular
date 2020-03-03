@@ -1,1 +1,6 @@
-<p>user works!</p>
+<div class="user" *ngIf="user">
+    Hello, {{ user.displayName }}
+    <br>
+    Your email: {{ user.email }}
+</div>
+<button (click) = "logOut()">Log out</button>

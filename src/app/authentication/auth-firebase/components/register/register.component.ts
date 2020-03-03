@@ -29,9 +29,9 @@ export class RegisterComponent implements OnInit {
   private userPasswordConfirmValidator(password: string, confirmPassword: string) {
     return (formGroup: FormGroup) => {
       const pass = formGroup.controls[password];
-      const confPassword = formGroup.controls[confirmPassword];
-      if (pass.value !== confPassword.value) {
-        confPassword.setErrors({match: true});
+      const confPass = formGroup.controls[confirmPassword];
+      if (pass.value !== confPass.value) {
+        confPass.setErrors({match: true});
       }
     };
   }
@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(value: {name: string, email: string, password: string}) {
+    // console.log(this.f.password.errors);
     this.submitted = true;
     if (!this.registerForm.invalid) {
       this.authServ.doRegister(value);
