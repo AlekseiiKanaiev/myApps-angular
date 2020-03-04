@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlertComponent } from './components/alert/alert.component';
 import { ChangePassComponent } from './components/change-pass/change-pass.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -16,11 +15,12 @@ import { EmailVerificationComponent } from './components/email-verification/emai
 const authRoutes: Routes = [
   {path: 'authentication/login', component: LoginComponent, canActivate: [AuthGuard]},
   {path: 'authentication/register', component: RegisterComponent, canActivate: [AuthGuard], pathMatch: 'full'},
-  {path: 'authentication/change-pass', component: ChangePassComponent, canActivate: [AuthGuard]}
+  {path: 'authentication/change-pass', component: ChangePassComponent, canActivate: [AuthGuard]},
+  {path: 'authentication/register/email-verification', component: EmailVerificationComponent}
 ];
 
 @NgModule({
-  declarations: [AlertComponent, ChangePassComponent, LoginComponent, RegisterComponent, EmailVerificationComponent],
+  declarations: [ChangePassComponent, LoginComponent, RegisterComponent, EmailVerificationComponent],
   imports: [
     CommonModule,
     RouterModule.forRoot(authRoutes),

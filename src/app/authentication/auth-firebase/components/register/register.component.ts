@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(24)]],
       email: ['', [Validators.required, Validators.pattern(this.pattern)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      verified: [false],
       confirmPassword: ['', Validators.required]
     },
     {
@@ -40,8 +41,7 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
 
-  register(value: {name: string, email: string, password: string}) {
-    // console.log(this.f.password.errors);
+  register(value: {name: string, email: string, password: string, verified: boolean}) {
     this.submitted = true;
     if (!this.registerForm.invalid) {
       this.authServ.doRegister(value);

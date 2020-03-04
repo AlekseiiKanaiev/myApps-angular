@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(this.pattern)]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      verified: [true]
     });
   }
 
@@ -26,8 +27,8 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  login(value: {email: string, password: string}) {
-    console.log(1);
+  login(value: {email: string, password: string, verified: boolean}) {
+    // console.log(1);
     this.submitted = true;
     if (!this.loginForm.invalid) {
       this.authServ.doEmailAndPasswordLogin(value);

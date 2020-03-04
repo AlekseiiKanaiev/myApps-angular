@@ -12,3 +12,17 @@ button{
 .login-link:hover{
     color: #00A1F1;
 }
+.verified{
+    display: flex;
+    align-items: center;
+    margin: 10px 0 ;
+}
+
+.verified .checkbox{
+    width: 15px;
+    height: 15px;
+}
+.verified label{
+    margin: 0;
+    margin-left: 10px;
+}

@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
     this.authServ.userData.subscribe(
       data => {
         if (data) {
-          console.log(data);
+          // console.log(data);
           this.user = data;
         }
       }
