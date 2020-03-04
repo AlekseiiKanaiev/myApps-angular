@@ -1,9 +1,11 @@
 <!-- The alert component template contains the html for 
     displaying alert messages at the top of the page. -->
-<div id="alert" *ngIf="message"
-    [ngClass]="{'alert': message,
+<div class="alert-box">
+    <div id="alert" *ngIf="message" (click) = remove()
+        [ngClass]="{'alert': message,
                 'alert-success': message.type === 'success',
                 'alert-danger': message.type === 'error',
                 'alert-warning': message.type === 'warning'}">
-    {{ message.text }}
+        {{ message.text }}
+    </div>
 </div>

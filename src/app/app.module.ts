@@ -14,8 +14,7 @@ import { CalculatorModule } from './calculator/calculator.module';
 import { BookStoreModule } from './bookStore/bookStore.module';
 import { DrumMachineModule } from './drum-machine/drum-machine.module';
 import { RandomQuoteModule } from './random-quote/random-quote.module';
-
-
+import { AuthenticationModule } from './authentication/authentication.module';
 
 
 @NgModule({
@@ -27,12 +26,14 @@ import { RandomQuoteModule } from './random-quote/random-quote.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    // tslint:disable-next-line: deprecation
     HttpModule,
     AppRoutingModule,
     CalculatorModule,
     BookStoreModule,
     DrumMachineModule,
-    RandomQuoteModule
+    RandomQuoteModule,
+    AuthenticationModule
   ],
   providers: [
     AlertService,

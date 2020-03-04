@@ -11,6 +11,7 @@ export class FileService {
   constructor(private http: Http) {}
 
   downloadFile() {
+    // tslint:disable-next-line: deprecation
     return this.http.get('assets/docs/resume_Kanaev_Oleksii.docx', {responseType: ResponseContentType.Blob});
   }
 }

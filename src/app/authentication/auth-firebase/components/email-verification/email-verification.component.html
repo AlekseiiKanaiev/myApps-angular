@@ -1,0 +1,26 @@
+<div *ngIf="user">
+    <div *ngIf="user.emailVerified; then verifiedBlock; else notVerifiedBlock"></div>
+    <ng-template #verifiedBlock>
+        <div class="to-user">
+            <a [routerLink]="['/authentication/user']" routerLinkActive="router-link-active">
+                To User
+            </a>
+        </div>
+    </ng-template>
+    <ng-template #notVerifiedBlock>
+        <h2>Thank you for register</h2>
+        <div>
+            <p>
+                We sent you a verification email to <strong>{{ user.email }}!</strong>
+            </p>
+            <p>
+                Please check your email and click on the link to verfiy your email address.
+            </p>
+        </div>
+        <div>
+            Did not recieve email? Press button and we resend it to you.
+        </div>
+        <span>Time to be able to resend:</span><span>{{ timer }}</span>
+        <button  [disabled] = '!enable'(click) = 'resend()'>Resend</button>
+    </ng-template>
+</div>

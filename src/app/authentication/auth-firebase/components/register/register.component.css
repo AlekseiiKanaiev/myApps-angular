@@ -1,0 +1,28 @@
+button{
+    width: 100px;
+}
+.login-link{
+    text-decoration: none;
+    color: inherit;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+}
+.login-link:hover{
+    color: #00A1F1;
+}
+.verified{
+    display: flex;
+    align-items: center;
+    margin: 10px 0 ;
+}
+
+.verified .checkbox{
+    width: 15px;
+    height: 15px;
+}
+.verified label{
+    margin: 0;
+    margin-left: 10px;
+}
