@@ -16,6 +16,7 @@ export const environment = {
   },
   database: 'firebase',
   socialAuthEnabled: true,
+  API: 'http://localhost:4200',
 };
 
 /*

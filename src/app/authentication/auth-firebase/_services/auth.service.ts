@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/_services/alertService.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
   userData: Observable<firebase.User>;
   user: firebase.User;
   verify = new BehaviorSubject<boolean>(true);
-  private url = 'http://localhost:4200';
+  private url = environment.API;
 
   constructor(public afAuth: AngularFireAuth,
               private router: Router,
