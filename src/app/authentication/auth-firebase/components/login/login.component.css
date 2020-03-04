@@ -1,3 +1,6 @@
+.container{
+    text-align: center;
+}
 .verified{
     display: flex;
     align-items: center;
