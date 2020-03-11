@@ -1,15 +1,16 @@
-<div *ngIf="isShow; then thenBlock; else elseBlock"></div>
-<ng-template #thenBlock>
-    <table *tableDirective = 'phones'></table>
-</ng-template>
-<ng-template #elseBlock>
-    <div>
-        <label>Set odd table row color:</label> 
-        <input type="text" [(ngModel)]="oddRow">
-    </div>
-    <div>
-        <label>Set even table row color:</label> 
-        <input type="text" [(ngModel)]="evenRow">
-    </div>
-    <button (click) = 'show()'>Show table</button>
-</ng-template>
+<!-- <div>
+    <label>Set odd table row color:</label> 
+    <input type="text" [(ngModel)]="oddRow">
+</div>
+<div>
+    <label>Set even table row color:</label> 
+    <input type="text" [(ngModel)]="evenRow">
+</div> -->
+<button (click) = 'show()'>Show table</button>
+<h3>Set table of the phones</h3>
+<app-set-table-form (setTable) = 'setTable($event)'></app-set-table-form>
+<div *ngIf="isShow">
+<table *appTable = 'tableData' ></table>
+</div>
+
+    

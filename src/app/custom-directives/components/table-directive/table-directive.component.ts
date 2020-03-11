@@ -7,14 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableDirectiveComponent implements OnInit {
   phones = [
-    {name: 'iPhone', price: 1000},
-    {name: 'Samsung', price: 900},
-    {name: 'Xiaomi', pricce: 400}
+    // {name: 'iPhone', price: 1000},
+    // {name: 'Samsung', price: 900},
+    // {name: 'Xiaomi', price: 400}
   ];
 
-  isShow = false;
-  oddRow = '';
-  evenRow = '';
+  isShow = true;
+  oddRow = 'blue';
+  evenRow = 'yellow';
+
+  tableData = {phones: this.phones, oddRowColor: this.oddRow, evenRowColor: this.evenRow};
 
   constructor() { }
 
@@ -22,8 +24,14 @@ export class TableDirectiveComponent implements OnInit {
   }
 
   show() {
-    this.isShow = true;
+    this.isShow = !this.isShow;
     console.log(this.oddRow, this.evenRow);
+    this.tableData = {phones: this.phones, oddRowColor: this.oddRow, evenRowColor: this.evenRow};
+  }
+
+  setTable(phones) {
+    this.phones = phones;
+    this.tableData = {phones: this.phones, oddRowColor: this.oddRow, evenRowColor: this.evenRow};
   }
 
 }
