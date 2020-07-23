@@ -15,6 +15,7 @@ import { BookStoreModule } from './bookStore/bookStore.module';
 import { DrumMachineModule } from './drum-machine/drum-machine.module';
 import { RandomQuoteModule } from './random-quote/random-quote.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { CustomDirectivesModule } from './custom-directives/custom-directives.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AuthenticationModule } from './authentication/authentication.module';
     BookStoreModule,
     DrumMachineModule,
     RandomQuoteModule,
-    AuthenticationModule
+    AuthenticationModule,
+    CustomDirectivesModule
   ],
   providers: [
     AlertService,
