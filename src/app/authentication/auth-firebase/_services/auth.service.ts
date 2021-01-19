@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -18,7 +19,8 @@ export class AuthService {
   constructor(public afAuth: AngularFireAuth,
               private router: Router,
               private ngz: NgZone,
-              private alertServ: AlertService) {
+              private alertServ: AlertService,
+              private http: HttpClient) {
                 this.userData = afAuth.authState;
                 this.userData.subscribe(
                   (user: firebase.User) => {
@@ -105,6 +107,10 @@ export class AuthService {
       } else {
         this.verify.next(false);
         this.setUserToLocalstorage(res.user);
+        const REACT_APP_DB_URL='https://react-app-10627.firebaseio.com';
+        const newUser = {email: value.email, roles: '', userName: value.name, app: 'angular'};
+        this.http.post(`${REACT_APP_DB_URL}/users.json`, newUser).subscribe(res => console.log(res));
+
         this.alertServ.success('You have been successfully registred', true);
         this.navigate('user');
       }

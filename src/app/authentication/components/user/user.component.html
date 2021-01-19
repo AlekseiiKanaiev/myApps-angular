@@ -4,5 +4,9 @@
     Your email: {{ user.email }}
     <br>
     <a routerLink = '/authentication/change-pass'>Change password</a>
+    <br>
+    <a routerLink = "/my-menu" routerLinkActivate = 'router-link-activate' class="link">
+        to menu
+    </a>
 </div>
 <button (click) = "logOut()">Log out</button>

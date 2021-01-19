@@ -1,0 +1,59 @@
+<div class="centred">
+    <h1>Menu</h1>
+    <h2>Choose your racione</h2>
+    <div *ngIf="isLoaded">
+      <div *ngIf="user">
+        <p >Hello {{user.userName}}</p>
+        <div *ngFor="let item of meals">
+          <p>item</p>
+        </div>
+        <button (click)="openModal(template)" class="btn btn-success">Add meal</button>
+      </div>
+      <div *ngIf="!user">
+        <p>
+          You are not logged in! Please
+          <a routerLink="/authentication/login" routerLinkActive="router-link-active"
+            class="login-link">
+            login
+          </a>
+          or
+          <a routerLink = "/authentication/register" routerLinkActivate = 'router-link-activate'
+            class="link" id = 'register-link'>
+            create account
+          </a>
+          if you are not have account yet
+        </p>
+        <h3>Some of dishes</h3>
+        <carousel [noPause]="false">
+          <slide *ngFor="let item of adminDishes">
+            <img src={{item.img}} alt={{item.name}} class="d-block w-20 img">
+            <div class="carousel-caption d-none d-md-block description">
+              <h5>{{item.name}}</h5>
+              <p>{{item.description}}</p>
+            </div>
+          </slide>
+        </carousel>
+      </div>
+    </div>
+    <div *ngIf="!isLoaded">
+      <p>Loading...</p>
+    </div>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">New meal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- <p>Enter name of your meal</p> -->
+    <mat-form-field class="full-width">
+      <mat-label>Enter name of your meal</mat-label>
+      <input matInput placeholder="Name of menu" [(ngModel)]="nameOfMenu">
+    </mat-form-field>
+    <br>
+    <button (click)="modalRef.hide()" class="btn btn">Cancel</button>
+    <button (click)="addMeal()"[disabled]="nameOfMenu.length < 2" class="btn btn-primary">Add meal</button>
+  </div>
+</ng-template>

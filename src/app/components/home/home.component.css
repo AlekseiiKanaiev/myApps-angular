@@ -80,7 +80,7 @@ a:hover{
 
 #work {
     background-color: var(--main-blue);
-    
+
     padding: 100px 20px;
 }
 #work h2{
@@ -107,7 +107,7 @@ a:hover{
 }
 #work .item-grid img{
     width: 100%;
-    height: 200px;
+    height: 320px;
 }
 #work .item-grid p{
     color: var(--main-white);
@@ -206,5 +206,5 @@ footer{
     #work #apps-grid {
         margin: 0 20px;
     }
-    
+
 }

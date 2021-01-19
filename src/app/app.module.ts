@@ -16,6 +16,8 @@ import { DrumMachineModule } from './drum-machine/drum-machine.module';
 import { RandomQuoteModule } from './random-quote/random-quote.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { CustomDirectivesModule } from './custom-directives/custom-directives.module';
+import { MyMenuListModule } from './my-menu-list/my-menu-list.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { CustomDirectivesModule } from './custom-directives/custom-directives.mo
     DrumMachineModule,
     RandomQuoteModule,
     AuthenticationModule,
-    CustomDirectivesModule
+    CustomDirectivesModule,
+    MyMenuListModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AlertService,

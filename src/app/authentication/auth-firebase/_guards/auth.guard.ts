@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  verify = true;
+  verify = false;
   constructor(private authServ: AuthService, private router: Router, private afAuth: AngularFireAuth, private location: Location) {
     authServ.verify.subscribe(
       value => this.verify = value
@@ -32,4 +32,3 @@ export class AuthGuard implements CanActivate {
       }
   }
 }
-
